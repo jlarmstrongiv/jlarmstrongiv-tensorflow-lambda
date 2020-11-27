@@ -1,0 +1,23 @@
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    name: 'build and publish'
+    steps:
+      - uses: actions/checkout@v1
+      - name: 'build'
+        uses: 'docker://lambci/lambda:build-nodejs12.x'
+        with:
+          entrypoint: './scripts/build.sh'
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: 'npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN'
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - run: 'npm publish --access public'

@@ -1,9 +1,9 @@
 {
-  "name": "tensorflow-lambda",
+  "name": "@jlarmstrongiv/tensorflow-lambda",
   "description": "Run tensorflow on lambda",
-  "version": "1.0.2",
+  "version": "0.0.0",
   "main": "index.js",
-  "author": "lucleray",
+  "author": "lucleray and jlarmstrongiv",
   "homepage": "https://github.com/lucleray/tensorflow-lambda#readme",
   "bugs": {
     "url": "https://github.com/lucleray/tensorflow-lambda/issues"
