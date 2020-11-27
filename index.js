@@ -1,7 +1,10 @@
 const tar = require('tar')
 const fs = require('fs')
 const zlib = require('zlib')
+const axios = require('axios')
+const { Readable } = require('stream')
 const { TFJS_PATH, TAR_PATH } = require('./constants')
+const pkg = require('package.json')
 
 // this hack is required to avoid webpack/rollup/... bundling the required path
 const requireFunc =
@@ -36,6 +39,16 @@ async function createTfPromise() {
   // else, create the folder and deflate tfjs-node
   fs.mkdirSync(TFJS_PATH)
 
+  // https://cdn.jsdelivr.net/npm/jlarmstrongiv-tensorflow-lambda@0.0.4/tfjs-node.br
+  const response = await axios.get(
+    `https://cdn.jsdelivr.net/npm/${pkg.name}@${pkg.version}/tfjs-node.br`,
+    { responseType: 'blob' }
+  )
+
+  // https://stackoverflow.com/a/62143160
+  // const tfjsBrBuffer = Buffer.from(response.data)
+  const tfjsBrStream = Readable.from(response.data)
+
   // unzip tfjs-node
   await new Promise((resolve, reject) => {
     const x = tar.x({ cwd: TFJS_PATH })
@@ -43,7 +56,7 @@ async function createTfPromise() {
     x.on('finish', resolve)
     x.on('error', reject)
 
-    fs.createReadStream(TAR_PATH).pipe(zlib.createBrotliDecompress()).pipe(x)
+    tfjsBrStream.pipe(zlib.createBrotliDecompress()).pipe(x)
   })
 
   return requireTf()

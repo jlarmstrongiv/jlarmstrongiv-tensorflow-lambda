@@ -13,6 +13,9 @@
     "url": "https://github.com/jlarmstrongiv/jlarmstrongiv-tensorflow-lambda.git"
   },
   "license": "MIT",
+  "scripts": {
+    "postinstall": "rimraf node_modules/jlarmstrongiv-tensorflow-lambda/tfjs-node.br"
+  },
   "keywords": [
     "tensorflow",
     "nodejs",
@@ -24,9 +27,12 @@
     "tfjs-node.br"
   ],
   "dependencies": {
+    "axios": "^0.21.0",
+    "rimraf": "^3.0.2",
     "tar": "^4.4.8"
   },
   "devDependencies": {
+    "@types/rimraf": "^3.0.0",
     "@types/tar": "^4.0.4"
   }
 }
