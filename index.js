@@ -4,7 +4,7 @@ const zlib = require('zlib')
 const axios = require('axios')
 const { Readable } = require('stream')
 const { TFJS_PATH, TAR_PATH } = require('./constants')
-const pkg = require('package.json')
+const pkg = require('./package.json')
 
 // this hack is required to avoid webpack/rollup/... bundling the required path
 const requireFunc =
