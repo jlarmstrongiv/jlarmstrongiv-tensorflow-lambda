@@ -1,7 +1,7 @@
 {
   "name": "jlarmstrongiv-tensorflow-lambda",
   "description": "Run tensorflow on lambda",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "index.js",
   "author": "lucleray, ajbouh, and jlarmstrongiv",
   "homepage": "https://github.com/jlarmstrongiv/jlarmstrongiv-tensorflow-lambda#readme",
