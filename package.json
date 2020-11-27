@@ -4,13 +4,13 @@
   "version": "0.0.0",
   "main": "index.js",
   "author": "lucleray and jlarmstrongiv",
-  "homepage": "https://github.com/lucleray/tensorflow-lambda#readme",
+  "homepage": "https://github.com/jlarmstrongiv/jlarmstrongiv-tensorflow-lambda#readme",
   "bugs": {
-    "url": "https://github.com/lucleray/tensorflow-lambda/issues"
+    "url": "https://github.com/jlarmstrongiv/jlarmstrongiv-tensorflow-lambda/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucleray/tensorflow-lambda.git"
+    "url": "https://github.com/jlarmstrongiv/jlarmstrongiv-tensorflow-lambda.git"
   },
   "license": "MIT",
   "keywords": [
