@@ -3,7 +3,7 @@
   "description": "Run tensorflow on lambda",
   "version": "0.0.1",
   "main": "index.js",
-  "author": "lucleray and jlarmstrongiv",
+  "author": "lucleray, ajbouh, and jlarmstrongiv",
   "homepage": "https://github.com/jlarmstrongiv/jlarmstrongiv-tensorflow-lambda#readme",
   "bugs": {
     "url": "https://github.com/jlarmstrongiv/jlarmstrongiv-tensorflow-lambda/issues"
@@ -23,11 +23,12 @@
     "constants.js",
     "tfjs-node.br"
   ],
-  "scripts": {
-    "build": "node build.js"
-  },
   "dependencies": {
     "iltorb": "^2.4.2",
     "tar": "^4.4.8"
+  },
+  "devDependencies": {
+    "@types/iltorb": "^2.3.2",
+    "@types/tar": "^4.0.4"
   }
 }

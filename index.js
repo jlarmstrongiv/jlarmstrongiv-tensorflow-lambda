@@ -45,6 +45,7 @@ async function createTfPromise() {
 
     fs.createReadStream(TAR_PATH)
       .pipe(iltorb.decompressStream())
+      .pipe(iltorb.decompressStream())
       .pipe(x)
   })
 
