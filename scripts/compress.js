@@ -16,4 +16,4 @@ tar
       },
     })
   )
-  .pipe(fs.createWriteStream(pathResolve(__dirname, 'tfjs-node.br')))
+  .pipe(fs.createWriteStream(pathResolve(__dirname, '../tfjs-node.br')))
