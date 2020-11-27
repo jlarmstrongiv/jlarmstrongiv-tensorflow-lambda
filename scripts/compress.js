@@ -1,3 +1,4 @@
+const { resolve: pathResolve } = require('path')
 const tar = require('tar')
 const fs = require('fs')
 const { TFJS_PATH } = require('../constants')
