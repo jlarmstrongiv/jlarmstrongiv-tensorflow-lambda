@@ -1,5 +1,5 @@
 {
-  "name": "@jlarmstrongiv/tensorflow-lambda",
+  "name": "jlarmstrongiv-tensorflow-lambda",
   "description": "Run tensorflow on lambda",
   "version": "0.0.0",
   "main": "index.js",
