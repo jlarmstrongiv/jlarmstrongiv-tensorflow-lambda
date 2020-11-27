@@ -1,7 +1,7 @@
 const tar = require('tar')
 const fs = require('fs')
 const zlib = require('zlib')
-const { TFJS_PATH, TAR_PATH } = require('./constants')
+const { TFJS_PATH } = require('./constants')
 
 // this hack is required to avoid webpack/rollup/... bundling the required path
 const requireFunc =
@@ -43,7 +43,9 @@ async function createTfPromise() {
     x.on('finish', resolve)
     x.on('error', reject)
 
-    fs.createReadStream(TAR_PATH).pipe(zlib.createBrotliDecompress()).pipe(x)
+    fs.createReadStream('/tmp/tfjs-node.br')
+      .pipe(zlib.createBrotliDecompress())
+      .pipe(x)
   })
 
   return requireTf()

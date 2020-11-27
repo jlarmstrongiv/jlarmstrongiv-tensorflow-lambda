@@ -1,6 +1,6 @@
 const tar = require('tar')
 const fs = require('fs')
-const { TFJS_PATH, TAR_PATH } = require('../constants')
+const { TFJS_PATH } = require('../constants')
 const zlib = require('zlib')
 
 tar
@@ -15,4 +15,4 @@ tar
       },
     })
   )
-  .pipe(fs.createWriteStream(TAR_PATH))
+  .pipe(fs.createWriteStream(pathResolve(__dirname, 'tfjs-node.br')))
