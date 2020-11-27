@@ -24,11 +24,9 @@
     "tfjs-node.br"
   ],
   "dependencies": {
-    "iltorb": "^2.4.2",
     "tar": "^4.4.8"
   },
   "devDependencies": {
-    "@types/iltorb": "^2.3.2",
     "@types/tar": "^4.0.4"
   }
 }
