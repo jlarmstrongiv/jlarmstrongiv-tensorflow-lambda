@@ -14,7 +14,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "postinstall": "rimraf node_modules/jlarmstrongiv-tensorflow-lambda/tfjs-node.br"
+    "postinstall": "rimraf ./tfjs-node.br"
   },
   "keywords": [
     "tensorflow",
@@ -22,6 +22,7 @@
     "lambda"
   ],
   "files": [
+    "package.json",
     "index.js",
     "constants.js",
     "tfjs-node.br"
