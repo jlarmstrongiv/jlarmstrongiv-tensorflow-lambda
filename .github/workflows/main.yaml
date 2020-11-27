@@ -1,7 +1,13 @@
+# TODO: publish on tags for npm
+# https://github.com/ajbouh/tensorflow-lambda/blob/master/.github/workflows/main.yaml
+# Automatically on npm version patch
 on:
+  # https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#example-using-multiple-events-with-activity-types-or-configuration
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
   push:
-    tags:
-      - '*'
+    branches:
+      - master
 
 jobs:
   build_and_publish:
