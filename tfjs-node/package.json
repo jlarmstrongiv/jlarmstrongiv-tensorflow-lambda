@@ -3,6 +3,9 @@
   "version": "2.7.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "install-modules": "docker run -it -v `pwd`:`pwd` -w `pwd` lambci/lambda:build-nodejs12.x npm install"
+  },
   "dependencies": {
     "@tensorflow/tfjs-node": "2.7.0"
   }

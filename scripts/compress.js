@@ -1,9 +1,11 @@
+// CAREFUL IF YOU MOVE THIS FILE, the pathResolve breaks
 const { resolve: pathResolve } = require('path')
 const tar = require('tar')
 const fs = require('fs')
 const { TFJS_PATH } = require('../constants')
 const zlib = require('zlib')
 
+// pathResolve(__dirname, '../tfjs-node')
 tar
   .c({ cwd: TFJS_PATH }, ['index.js', 'node_modules'])
   .pipe(
